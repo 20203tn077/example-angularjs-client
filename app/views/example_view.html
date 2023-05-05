@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="example-app">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example view | App</title>
+    <!-- AngularJS -->
+    <script src="../../assets/js/angular.min.js"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../../assets/css/notyf.min.css">
+    <link rel="stylesheet" href="../../assets/css/sweetalert2.min.css">
+    <style>hr,h1,h2,h3,h4,h5,h6 {margin: 0;}</style>
+</head>
+<body ng-controller="example-controller">
+    <div class="container my-5">
+        <h1 class="mb-3">{{greeting}}</h1>
+        <div class="row">
+            <div class="col-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <div class="vstack gap-3">
+                            <h5>Texto aleatorio</h5>
+                            <button class="btn btn-primary" ng-click="getRandom()">Random</button>
+                            <hr>
+                            <h5>Mensaje con nombre</h5>
+                            <input ng-model="name" type="text" class="form-control" placeholder="Ingresa un nombre">
+                            <button class="btn btn-primary" ng-click="getMessage()">Mostrar mensaje</button>
+                            <hr>
+                            <h5>Agregar elemento</h5>
+                            <input ng-model="item" type="text" class="form-control" placeholder="Elemento">
+                            <button class="btn btn-success" ng-click="addItem()">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h3 class="mb-3">Listado:</h3>
+                <div class="row g-2">
+                    <div ng-repeat="item in items" class="col-md-6 col-lg-4 col-xl-3">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h6>{{item}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/notyf.min.js"></script>
+    <script src="../../assets/js/sweetalert2.all.min.js"></script>
+    <script src="../app.js"></script>
+    <!-- Example controller -->
+    <script src="../controllers/example_controller.js"></script>
+</body>
+</html>
